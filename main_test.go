@@ -13,6 +13,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"sort"
 	"strconv"
 	"strings"
 	"sync"
@@ -843,6 +844,11 @@ func TestJoinsWithSelect(t *testing.T) {
 
 	var results []result
 	DB.Table("users").Select("name, emails.email").Joins("left join emails on emails.user_id = users.id").Where("name = ?", "joins_with_select").Scan(&results)
+
+	sort.Slice(results, func(i, j int) bool {
+		return strings.Compare(results[i].Email, results[j].Email) < 0
+	})
+
 	if len(results) != 2 || results[0].Email != "join1@example.com" || results[1].Email != "join2@example.com" {
 		t.Errorf("Should find all two emails with Join select")
 	}
