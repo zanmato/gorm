@@ -1,836 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>GORM - The fantastic ORM library for Golang, aims to be developer friendly.</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://gorm.io/index.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="http://gorm.io/index.html">
+    
+      <link rel="alternative" hreflang="zh_CN" href="http://gorm.io/zh_CN/index.html">
+    
+      <link rel="alternative" hreflang="de_DE" href="http://gorm.io/de_DE/index.html">
+    
+      <link rel="alternative" hreflang="es_ES" href="http://gorm.io/es_ES/index.html">
+    
+      <link rel="alternative" hreflang="id_ID" href="http://gorm.io/id_ID/index.html">
+    
+      <link rel="alternative" hreflang="it_IT" href="http://gorm.io/it_IT/index.html">
+    
+      <link rel="alternative" hreflang="ja_JP" href="http://gorm.io/ja_JP/index.html">
+    
+      <link rel="alternative" hreflang="ru_RU" href="http://gorm.io/ru_RU/index.html">
+    
+      <link rel="alternative" hreflang="fr_FR" href="http://gorm.io/fr_FR/index.html">
+    
+      <link rel="alternative" hreflang="ko_KR" href="http://gorm.io/ko_KR/index.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <meta name="generator" content="Hexo 4.2.1">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Getting Started with GORM · GORM Guide</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
-        
-        
-    
-    <link rel="stylesheet" href="gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="database.html" />
-    
-    
-
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-
-<div class="book-summary">
-    
-    <nav role="navigation">
-        <ul class="summary">
-            
-            
-    
-        <li class="chapter active" data-level="1.1" data-path="./">
-            
-                <a href="./">
-            
-                    
-                        <b>1.1.</b>
-                    
-                    Getting Started with GORM
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="database.html">
-            
-                <a href="database.html">
-            
-                    
-                        <b>1.2.</b>
-                    
-                    Database
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.2.1" data-path="database.html">
-            
-                <a href="database.html#connecting-to-a-database">
-            
-                    
-                        <b>1.2.1.</b>
-                    
-                    Database Connection
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2.2" data-path="database.html">
-            
-                <a href="database.html#migration">
-            
-                    
-                        <b>1.2.2.</b>
-                    
-                    Migration
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="models.html">
-            
-                <a href="models.html">
-            
-                    
-                        <b>1.3.</b>
-                    
-                    Models
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="models.html">
-            
-                <a href="models.html#model-definition">
-            
-                    
-                        <b>1.3.1.</b>
-                    
-                    Model Definition
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="models.html">
-            
-                <a href="models.html#conventions">
-            
-                    
-                        <b>1.3.2.</b>
-                    
-                    Conventions & Overriding
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="associations.html">
-            
-                <a href="associations.html">
-            
-                    
-                        <b>1.3.3.</b>
-                    
-                    Associations
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.3.1" data-path="associations.html">
-            
-                <a href="associations.html#belongs-to">
-            
-                    
-                        <b>1.3.3.1.</b>
-                    
-                    Belongs To
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3.2" data-path="associations.html">
-            
-                <a href="associations.html#has-one">
-            
-                    
-                        <b>1.3.3.2.</b>
-                    
-                    Has One
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3.3" data-path="associations.html">
-            
-                <a href="associations.html#has-many">
-            
-                    
-                        <b>1.3.3.3.</b>
-                    
-                    Has Many
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3.4" data-path="associations.html">
-            
-                <a href="associations.html#many-to-many">
-            
-                    
-                        <b>1.3.3.4.</b>
-                    
-                    Many To Many
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3.5" data-path="associations.html">
-            
-                <a href="associations.html#polymorphism">
-            
-                    
-                        <b>1.3.3.5.</b>
-                    
-                    Polymorphism
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3.6" data-path="associations.html">
-            
-                <a href="associations.html#association-mode">
-            
-                    
-                        <b>1.3.3.6.</b>
-                    
-                    Association Mode
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="dialects.html">
-            
-                <a href="dialects.html#dialect-data-type">
-            
-                    
-                        <b>1.3.4.</b>
-                    
-                    Dialect Specific Data Type
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="crud.html">
-            
-                <a href="crud.html">
-            
-                    
-                        <b>1.4.</b>
-                    
-                    CRUD: Reading and Writing Data
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="crud.html">
-            
-                <a href="crud.html#create">
-            
-                    
-                        <b>1.4.1.</b>
-                    
-                    Create
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.2" data-path="crud.html">
-            
-                <a href="crud.html#query">
-            
-                    
-                        <b>1.4.2.</b>
-                    
-                    Query
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="crud.html">
-            
-                <a href="crud.html#preloading-eager-loading">
-            
-                    
-                        <b>1.4.3.</b>
-                    
-                    Preloading (Eager Loading)
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="crud.html">
-            
-                <a href="crud.html#update">
-            
-                    
-                        <b>1.4.4.</b>
-                    
-                    Update
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="crud.html">
-            
-                <a href="crud.html#delete">
-            
-                    
-                        <b>1.4.5.</b>
-                    
-                    Delete / Soft Delete
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" data-path="crud.html">
-            
-                <a href="crud.html#associations">
-            
-                    
-                        <b>1.4.6.</b>
-                    
-                    Associations
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="callbacks.html">
-            
-                <a href="callbacks.html">
-            
-                    
-                        <b>1.5.</b>
-                    
-                    Callbacks
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="advanced.html">
-            
-                <a href="advanced.html">
-            
-                    
-                        <b>1.6.</b>
-                    
-                    Advanced Usage
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="advanced.html">
-            
-                <a href="advanced.html#error-handling">
-            
-                    
-                        <b>1.6.1.</b>
-                    
-                    Error Handling
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="advanced.html">
-            
-                <a href="advanced.html#transactions">
-            
-                    
-                        <b>1.6.2.</b>
-                    
-                    Transactions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="advanced.html">
-            
-                <a href="advanced.html#sql-builder">
-            
-                    
-                        <b>1.6.3.</b>
-                    
-                    Raw SQL & SQL Builder
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="advanced.html">
-            
-                <a href="advanced.html#generic-database-interface-sqldb">
-            
-                    
-                        <b>1.6.4.</b>
-                    
-                    Generic database interface sql.DB
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="advanced.html">
-            
-                <a href="advanced.html#compose-primary-key">
-            
-                    
-                        <b>1.6.5.</b>
-                    
-                    Composite Primary Key
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="advanced.html">
-            
-                <a href="advanced.html#logger">
-            
-                    
-                        <b>1.6.6.</b>
-                    
-                    Overriding Logger
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="development.html">
-            
-                <a href="development.html">
-            
-                    
-                        <b>1.7.</b>
-                    
-                    Development
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="development.html">
-            
-                <a href="development.html#architecture">
-            
-                    
-                        <b>1.7.1.</b>
-                    
-                    Architecture
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="development.html">
-            
-                <a href="development.html#write-plugins">
-            
-                    
-                        <b>1.7.2.</b>
-                    
-                    Write Plugins
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="changelog.html">
-            
-                <a href="changelog.html">
-            
-                    
-                        <b>1.8.</b>
-                    
-                    Change Log
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            <li class="divider"></li>
-            
-        </ul>
-    </nav>
-    
-</div>
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="GORM">
+  <!-- Open Graph -->
+  <meta name="description" content="The fantastic ORM library for Golang, aims to be developer friendly.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GORM">
+<meta property="og:url" content="http://gorm.io/index.html">
+<meta property="og:site_name" content="GORM">
+<meta property="og:description" content="The fantastic ORM library for Golang, aims to be developer friendly.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-24T22:23:32.758Z">
+<meta property="article:modified_time" content="2020-06-24T22:23:32.758Z">
+<meta property="article:author" content="Jinzhu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="zhangjinzhu">
+  <!-- Google Tag Manager -->
+  
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WSNPD75');</script>
 
 
-                </nav>
-            
-        
-    </div>
+</head>
 
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Getting Started with GORM</a>
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">GORM</a>
     </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="gorm">GORM</h1>
-<p>The fantastic ORM library for Golang, aims to be developer friendly.</p>
-<p><a href="https://gitter.im/jinzhu/gorm?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge" target="_blank"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/jinzhu/gorm"></a>
-<a href="https://app.wercker.com/project/bykey/0cb7bb1039e21b74f8274941428e0921" target="_blank"><img src="https://app.wercker.com/status/0cb7bb1039e21b74f8274941428e0921/s/master" alt="wercker status" title="wercker status"></a>
-<a href="https://godoc.org/github.com/jinzhu/gorm" target="_blank"><img src="https://godoc.org/github.com/jinzhu/gorm?status.svg" alt="GoDoc"></a></p>
-<h2 id="overview">Overview</h2>
-<ul>
-<li>Full-Featured ORM (almost)</li>
-<li>Associations (Has One, Has Many, Belongs To, Many To Many, Polymorphism)</li>
-<li>Callbacks (Before/After Create/Save/Update/Delete/Find)</li>
-<li>Preloading (eager loading)</li>
-<li>Transactions</li>
-<li>Composite Primary Key</li>
-<li>SQL Builder</li>
-<li>Auto Migrations</li>
-<li>Logger</li>
-<li>Extendable, write Plugins based on GORM callbacks</li>
-<li>Every feature comes with tests</li>
-<li>Developer Friendly</li>
-</ul>
-<h2 id="install">Install</h2>
-<pre><code class="lang-sh">go get -u github.com/jinzhu/gorm
-</code></pre>
-<h2 id="upgrading-to-v10">Upgrading To V1.0</h2>
-<ul>
-<li><a href="changelog.html">CHANGELOG</a></li>
-</ul>
-<h2 id="quick-start">Quick Start</h2>
-<pre><code class="lang-go"><span class="hljs-keyword">package</span> main
-
-<span class="hljs-keyword">import</span> (
-    <span class="hljs-string">&quot;github.com/jinzhu/gorm&quot;</span>
-    _ <span class="hljs-string">&quot;github.com/jinzhu/gorm/dialects/sqlite&quot;</span>
-)
-
-<span class="hljs-keyword">type</span> Product <span class="hljs-keyword">struct</span> {
-  gorm.Model
-  Code <span class="hljs-keyword">string</span>
-  Price <span class="hljs-keyword">uint</span>
-}
-
-<span class="hljs-keyword">func</span> main() {
-  db, err := gorm.Open(<span class="hljs-string">&quot;sqlite3&quot;</span>, <span class="hljs-string">&quot;test.db&quot;</span>)
-  <span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
-    <span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;failed to connect database&quot;</span>)
-  }
-  <span class="hljs-keyword">defer</span> db.Close()
-
-  <span class="hljs-comment">// Migrate the schema</span>
-  db.AutoMigrate(&amp;Product{})
-
-  <span class="hljs-comment">// Create</span>
-  db.Create(&amp;Product{Code: <span class="hljs-string">&quot;L1212&quot;</span>, Price: <span class="hljs-number">1000</span>})
-
-  <span class="hljs-comment">// Read</span>
-  <span class="hljs-keyword">var</span> product Product
-  db.First(&amp;product, <span class="hljs-number">1</span>) <span class="hljs-comment">// find product with id 1</span>
-  db.First(&amp;product, <span class="hljs-string">&quot;code = ?&quot;</span>, <span class="hljs-string">&quot;L1212&quot;</span>) <span class="hljs-comment">// find product with code l1212</span>
-
-  <span class="hljs-comment">// Update - update product&apos;s price to 2000</span>
-  db.Model(&amp;product).Update(<span class="hljs-string">&quot;Price&quot;</span>, <span class="hljs-number">2000</span>)
-
-  <span class="hljs-comment">// Delete - delete product</span>
-  db.Delete(&amp;product)
-}
-</code></pre>
-<h1 id="contributors">Contributors</h1>
-<p><a href="https://github.com/jinzhu/gorm/graphs/contributors" target="_blank">https://github.com/jinzhu/gorm/graphs/contributors</a></p>
-<h1 id="supporting-the-project">Supporting the project</h1>
-<p><a href="http://patreon.com/jinzhu" target="_blank"><img src="http://patreon_public_assets.s3.amazonaws.com/sized/becomeAPatronBanner.png" alt="http://patreon.com/jinzhu"></a></p>
-<h1 id="author">Author</h1>
-<p><strong>jinzhu</strong></p>
-<ul>
-<li><a href="http://github.com/jinzhu" target="_blank">http://github.com/jinzhu</a></li>
-<li><a href="mailto:wosmvp@gmail.com" target="_blank">wosmvp@gmail.com</a></li>
-<li><a href="http://twitter.com/zhangjinzhu" target="_blank">http://twitter.com/zhangjinzhu</a></li>
-</ul>
-<h2 id="license">License</h2>
-<p>Released under the <a href="https://github.com/jinzhu/gorm/blob/master/License" target="_blank">MIT License</a>.</p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link"><i class="fa fa-book"></i>Docs</a><a href="/community.html" class="main-nav-link"><i class="fa fa-slack"></i>Community</a><a href="https://pkg.go.dev/github.com/jinzhu/gorm" class="main-nav-link" target="_blank"><i class="fa fa-cogs"></i>API</a><a href="/contribute.html" class="main-nav-link"><i class="fa fa-rocket"></i>Contribute</a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
         </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
+        <input type="search" id="search-input" placeholder="Search documents...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh_CN">简体中文</option>
+        
+          <option value="de_DE">Deutsch</option>
+        
+          <option value="es_ES">Español</option>
+        
+          <option value="id_ID">bahasa Indonesia</option>
+        
+          <option value="it_IT">Italiano</option>
+        
+          <option value="ja_JP">日本語</option>
+        
+          <option value="ru_RU">Русский</option>
+        
+          <option value="fr_FR">French</option>
+        
+          <option value="ko_KR">한국어</option>
+        
+      </select>
     </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <header id="banner" class="wrapper">
+  <div class="inner">
+    <h2 id="banner-title">The fantastic ORM library for Golang</h2>
+    <div id="banner-start">
+      <span id="banner-start-command">go get -u github.com/jinzhu/gorm</span><a id="banner-start-link" href="docs/"><i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div id="banner-share"><!-- GitHub star -->
+<a class="github-button" href="https://github.com/go-gorm/gorm" target="_blank" rel="noopener" data-icon="octicon-star" data-show-count="true" aria-label="Star go-gorm/gorm on GitHub">Star</a>
+<!-- GitHub fork -->
+<a class="github-button" href="https://github.com/go-gorm/gorm/fork" target="_blank" rel="noopener" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork go-gorm/gorm on GitHub">Fork</a><!-- Tweet button -->
+<!-- Twitter follow button -->
+<a href="https://twitter.com/zhangjinzhu" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="true">Follow @zhangjinzhu</a>
+<!-- Github Button -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Twitter share button -->
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+  </div>
+</header>
+
+<div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner features">
+      <ul>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Full-Featured ORM (almost)</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Associations (Has One, Has Many, Belongs To, Many To Many, Polymorphism)</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Hooks (Before/After Create/Save/Update/Delete/Find)</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Preloading (eager loading)</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Transactions</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Composite Primary Key</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> SQL Builder</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Auto Migrations</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Logger</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Extendable, write Plugins based on GORM callbacks</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Every feature comes with tests</li>
+<li><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Developer Friendly</li>
+</ul>
+
+    </div>
+  </div>
+
+  <div class="sponsors-wrapper-pc">
+    <div class="inner">
+      <div class="sponsors">
+        <h1>Our Contributors</h1>
+        <object type="image/svg+xml" data="https://opencollective.com/gorm/contributors.svg?avatarHeight=34&width=1080"></object>
+      </div>
+
+      <div class="sponsors">
+        <h1>Our Sponsors</h1>
+        <object type="image/svg+xml" data="https://opencollective.com/gorm/tiers/sponsor.svg?avatarHeight=68&width=1080"></object>
+      </div>
+    </div>
+  </div>
+
+  <div class="sponsors-wrapper-mobile">
+    <div class="inner">
+      <div class="sponsors">
+        <h1>Our Contributors</h1>
+        <object type="image/svg+xml" data="https://opencollective.com/gorm/contributors.svg?avatarHeight=34&width=375"></object>
+      </div>
+
+      <div class="sponsors">
+        <h1>Our Sponsors</h1>
+        <object type="image/svg+xml" data="https://opencollective.com/gorm/tiers/sponsor.svg?avatarHeight=68&width=350"></object>
+      </div>
+    </div>
+  </div>
 </div>
 
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                
-                <a href="database.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Database">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2013~2020 <a href="https://github.com/jinzhu" target="_blank">Jinzhu</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.<br>
+      <a href="https://github.com/jinzhu/gorm.io" target="_blank">Source Code of this site</a>
     </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/zhangjinzhu" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/go-gorm/gorm" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Getting Started with GORM","level":"1.1","depth":1,"next":{"title":"Database","level":"1.2","depth":1,"path":"database.md","ref":"database.md","articles":[{"title":"Database Connection","level":"1.2.1","depth":2,"anchor":"#connecting-to-a-database","path":"database.md","ref":"database.md#connecting-to-a-database","articles":[]},{"title":"Migration","level":"1.2.2","depth":2,"anchor":"#migration","path":"database.md","ref":"database.md#migration","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","edit-link"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"github":{"url":"https://github.com/jinzhu/gorm"},"edit-link":{"label":"Edit This Page","base":"https://github.com/jinzhu/gorm/edit/gh-pages/documents/"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GORM Guide","gitbook":"*"},"file":{"path":"README.md","mtime":"2018-02-13T00:34:15.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-02-13T00:40:36.927Z"},"basePath":".","book":{"language":""}});
-        });
-    </script>
-</div>
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <li class="mobile-nav-item">
+        <a href="/" class="mobile-nav-link" rel="external" target="_blank"><i class="fa fa-home"></i>Home</a>
+      </li>
+      <a href="/docs/" class="mobile-nav-link"><i class="fa fa-book"></i>Docs</a><a href="/community.html" class="mobile-nav-link"><i class="fa fa-slack"></i>Community</a><a href="https://pkg.go.dev/github.com/jinzhu/gorm" class="mobile-nav-link" target="_blank"><i class="fa fa-cogs"></i>API</a><a href="/contribute.html" class="mobile-nav-link"><i class="fa fa-rocket"></i>Contribute</a>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh_CN">简体中文</option>
+      
+        <option value="de_DE">Deutsch</option>
+      
+        <option value="es_ES">Español</option>
+      
+        <option value="id_ID">bahasa Indonesia</option>
+      
+        <option value="it_IT">Italiano</option>
+      
+        <option value="ja_JP">日本語</option>
+      
+        <option value="ru_RU">Русский</option>
+      
+        <option value="fr_FR">French</option>
+      
+        <option value="ko_KR">한국어</option>
+      
+    </select>
+  </div>
+</nav>
 
-        
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
 
-    </body>
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/toc.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="/js/code_expander.js"></script>
+
+
+<script src="/js/404_fix.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+ apiKey: '442683d88a109de42c6d01bb0c7c4cec',
+ indexName: 'gorm',
+ inputSelector: '#search-input'
+});
+</script>
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSNPD75"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+</body>
 </html>
-
